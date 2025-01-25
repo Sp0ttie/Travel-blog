@@ -5,89 +5,120 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Travel Blog</title>
-   
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="description" content="">
-
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <meta property="og:image:alt" content="">
-
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="icon.png">
-
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#fafafa">
     <style>
-      body{
-        font-family:Arial, Helvetica, sans-serif;
+      body {
+        font-family: Arial, Helvetica, sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
+
       header {
         width: 100%;
         background-color: #62b3d8;
         color: rgb(0, 0, 0);
-        padding: 10px 20px;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 10;
+        font-size: 2rem;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: center;
+        gap: 40px;
       }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+
+      nav ul li a:hover {
+        color: white;
+        background-color: #000;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
       .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
       }
+
       .image-box {
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
       .image-box img {
-            max-width: 400px;
-            height: auto;
-            display: block;
-        }
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
       footer {
-            margin-top: auto;
-            width: 100%;
-            background-color: #62b3d8;
-            color: rgb(0, 0, 0);
-            text-align: center;
-            padding: 10px;
-        }
+        margin-top: auto;
+        width: 100%;
+        background-color: #62b3d8;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 10px;
+      }
+      p {max-width: 600px;
+        word-wrap: break-word;
+        margin: 20px auto;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
     </style>
-</head>
-<body>
-  <header>
-    <h1>Travel With Travis</h1>
-    <ul>
-      <li><a href="Home">Home</a></li>
-      <li><a href="About Us">About Us</a></li>
-      <li><a href="Contact Us">Contact Us</a></li>
-    </ul>
-  </header>
+  </head>
 
-  <div class="container">
-    <div class="image-box">
-      <img src="img/IMG_2131.jpg">
+  <body>
+    <header>
+      <h1>Welcome to my Blog</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <p>Welcome to my travel blog where I share insights, tips, and hacks for traveling abroad. My site is currently under maintenance. However, the final product will be cool.</p>
+    <div class="container">
+      <div class="image-box">
+        <img src="img/IMG_2131.jpg" alt="Travel image 1">
+      </div>
+      <div class="image-box">
+        <img src="img/IMG_0789.jpg" alt="Travel image 2">
+      </div>
+      <div class="image-box">
+        <img src="img/IMG_6419.jpg" alt="Travel image 3">
+      </div>
     </div>
-  </div>
-  <!-- Add your site or application content here -->
-  <p>Welcome to my travel blog where I share insights, tips, and hacks for traveling abroad. I'm using the boilerplate template. Theres a lot of packages in here. Still need time to figure out how to link my code and align my navigation menu.</p>
-  <script src="js/app.js"></script>
-  <footer>
-    <p>This is my footer</p>
-  </footer>
-</body>
 
 
+    <footer>
+      <p2>Follow us on Facebook for more travel insights</p2>
+    </footer>
+  </body>
 </html>
