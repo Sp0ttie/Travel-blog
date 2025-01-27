@@ -5,93 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Travel Blog</title>
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      header {
-        width: 100%;
-        background-color: #62b3d8;
-        color: rgb(0, 0, 0);
-        padding: 20px 0;
-        text-align: center;
-      }
-
-      header h1 {
-        margin: 10;
-        font-size: 2rem;
-      }
-
-      nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0 0;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-      }
-
-      nav ul li {
-        display: inline;
-      }
-
-      nav ul li a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-      }
-
-      nav ul li a:hover {
-        color: white;
-        background-color: #000;
-        padding: 5px 10px;
-        border-radius: 5px;
-      }
-
-      .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 20px;
-        max-width: 1200px;
-      }
-
-      .image-box {
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      .image-box img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      footer {
-        margin-top: auto;
-        width: 100%;
-        background-color: #62b3d8;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        padding: 10px;
-      }
-      p {max-width: 600px;
-        word-wrap: break-word;
-        margin: 20px auto;
-        line-height: 1.6;
-        text-align: justify;
-    }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
   </head>
-
   <body>
     <header>
       <h1>Welcome to my Blog</h1>
@@ -103,18 +18,42 @@
         </ul>
       </nav>
     </header>
-    <p>Welcome to my travel blog where I share insights, tips, and hacks for traveling abroad. My site is currently under maintenance. However, the final product will be cool.</p>
-    <div class="container">
-      <div class="image-box">
-        <img src="img/IMG_2131.jpg" alt="Travel image 1">
+
+    <div class="text-box">
+        <p>Welcome to my travel blog where I share insights, tips, and hacks for traveling abroad. My site is currently under maintenance. However, the final product will be cool.</p>
       </div>
-      <div class="image-box">
-        <img src="img/IMG_0789.jpg" alt="Travel image 2">
+
+      <div class="container">
+        <!-- Paris -->
+        <div class="image-box">
+          <a href="paris.html">
+            <img src="img/IMG_2131.jpg" alt="Paris">
+          </a>
+          <p>Paris, France</p>
+        </div>
+        <!-- Strasbourg -->
+        <div class="image-box">
+          <a href="strasbourg.html">
+            <img src="img/IMG_0789.jpg" alt="Strasbourg">
+          </a>
+          <p>Strasbourg, France</p>
+        </div>
+        <!-- Barcelona -->
+        <div class="image-box">
+          <a href="barcelona.html">
+            <img src="img/IMG_6419.jpg" alt="Barcelona">
+          </a>
+          <p>Barcelona, Spain</p>
+        </div>
+        <!-- Japan -->
+        <div class="image-box">
+          <a href="japan.html">
+            <img src="img/unnamed.jpg" alt="Japan">
+          </a>
+          <p>Kyoto, Japan</p>
+        </div>
       </div>
-      <div class="image-box">
-        <img src="img/IMG_6419.jpg" alt="Travel image 3">
-      </div>
-    </div>
+      
 
 
     <footer>
