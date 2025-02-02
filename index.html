@@ -1,63 +1,288 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Travel Blog</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to my Blog</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-          <li><a href="contactus.html">Contact Us</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel Blog</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+  .container{
+    width: 100%;
+    max-height: 80px;
+}
+  nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #f3d8b3;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 5%; 
+  z-index: 100;
+}
+nav ul {
+  list-style: none;
+  justify-content: flex-end;
+  display: flex;
+  padding-inline: 0 1000px;
+  gap: 30px;
+}
+nav ul li {
+  display: inline;
+}
 
-    <div class="text-box">
-        <p>Welcome to my travel blog where I share insights, tips, and hacks for traveling abroad. My site is currently under maintenance. However, the final product will be cool.</p>
-      </div>
+nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
 
-      <div class="container">
+nav ul li a:hover {
+  color: #002df7;
+}
+/* Logo Style */
+.logo { 
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    text-decoration: none;
+}
+/* Hero Section */
+.hero {
+  background-image: url("img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 80px;
+  position: relative;
+}
+/* Adding a Dark overlay for a little better readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 75px;
+  font-weight: 700;
+  color: #6d4f0e;
+}
+
+.hero p {
+  font-size: 35px;
+  margin-top: 20px;
+  font-weight: 300;
+  color: black;
+}
+footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: #f3d8b3;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+}
+/* Destination Section Styling */
+.destination-section {
+  text-align: center;
+  padding: 50px 10px;
+  background-color: #a4d1f8;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+/* Section Title */
+.destination-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #6d4f0e;
+  text-transform: uppercase;
+}
+
+/* Container for Cards */
+.destination-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+/* Card Styling */
+.image-box {
+  position: relative;
+  width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-box img {
+  width: 150%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.image-box:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay for text */
+.image-box .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  /* Text inside overlay */
+.image-box .overlay p {
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  ul {
+    display: none; /* This will hide my menu bar initially */
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: #f3d8b3;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  ul.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    padding: 10px;
+  }
+}
+
+/* Default (larger screens) */
+.menu-icon {
+  display: none;
+}
+</style>
+<body>
+  <!-- Navigation Menu -->
+  <div class="container">
+    <nav>
+      <a href="index.html">
+        <img src="img/logo.png" class="logo">
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hey, I'm Travis!</h1>
+      <p>Welcome to my travel blog where I share insights, tips, and hacks for traveling abroad. My site is currently under maintenance. However, the final product will be cool.</p>
+    </div>
+  </section>
+    <!-- Destination Section -->
+  <section class="destination-section">
+    <h2>Explore destinations in:</h2>
+      <div class="destination-container">
         <!-- Paris -->
-        <div class="image-box">
+    <div class="image-box">
           <a href="paris.html">
-            <img src="img/IMG_2131.jpg" alt="Paris">
+              <img src="img/IMG_2131.jpg" alt="Paris">
           </a>
-          <p>Paris, France</p>
-        </div>
-        <!-- Strasbourg -->
-        <div class="image-box">
-          <a href="strasbourg.html">
-            <img src="img/IMG_0789.jpg" alt="Strasbourg">
-          </a>
-          <p>Strasbourg, France</p>
-        </div>
-        <!-- Barcelona -->
-        <div class="image-box">
-          <a href="barcelona.html">
-            <img src="img/IMG_6419.jpg" alt="Barcelona">
-          </a>
-          <p>Barcelona, Spain</p>
-        </div>
-        <!-- Japan -->
-        <div class="image-box">
-          <a href="japan.html">
-            <img src="img/unnamed.jpg" alt="Japan">
-          </a>
-          <p>Kyoto, Japan</p>
-        </div>
+          <div class="overlay">
+              <p>Paris, France</p>
+          </div>
       </div>
-      
+      <!-- Strasbourg -->
+      <div class="image-box">
+          <a href="strasbourg.html">
+              <img src="img/IMG_0789.jpg" alt="Strasbourg">
+          </a>
+          <div class="overlay">
+              <p>Strasbourg, France</p>
+          </div>
+      </div>
+      <!-- Barcelona -->
+      <div class="image-box">
+          <a href="barcelona.html">
+              <img src="img/IMG_6419.jpg" alt="Barcelona">
+          </a>
+          <div class="overlay">
+              <p>Barcelona, Spain</p>
+          </div>
+      </div>
+      <!-- Japan -->
+      <div class="image-box">
+          <a href="japan.html">
+              <img src="img/kyoto.jpg" alt="Japan">
+          </a>
+          <div class="overlay">
+              <p>Kyoto, Japan</p>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>Follow us on Facebook for more travel insights</p>
+  </footer>
 
+</body>
 
-    <footer>
-      <p2>Follow us on Facebook for more travel insights</p2>
-    </footer>
-  </body>
 </html>
+
