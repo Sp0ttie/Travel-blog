@@ -48,13 +48,13 @@ nav ul li a:hover {
 }
 
 .text-box {
-  max-width: 800px; /* Constrain the box width */
-  margin: 20px auto; /* Center the box */
-  padding: 20px; /* Add padding inside the box */
-  border: 1px solid #ccc; /* Add a subtle border */
-  border-radius: 10px; /* Round the corners */
-  background-color: #ffe5ac; /* Light background color for contrast */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+  max-width: 800px; 
+  margin: 20px auto; 
+  padding: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 10px; 
+  background-color: #ffe5ac; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .text-box p {
