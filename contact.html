@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Contact Me</title>
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -11,28 +11,85 @@
       padding: 0;
       text-align: center;
       background-color: #f4f4f4;
+      color: #333;
     }
     header {
       background-color: #62b3d8;
       padding: 20px;
-      color: black;
+      color: white;
     }
     a {
       text-decoration: none;
-      color: black;
+      color: white;
+      font-weight: bold;
     }
     a:hover {
       text-decoration: underline;
     }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #62b3d8;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4a9cb3;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 10px;
+      color: #62b3d8;
+      font-size: 18px;
+    }
+    
   </style>
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
+    <h1>Contact Me</h1>
     <p><a href="index.html">Back to Home</a></p>
   </header>
-  <main>
-    <p>This page is where you can provide feedback or where you can ask us questions.</p>
-  </main>
+  <div class="container">
+    <h2>I'd Love to Hear from You!</h2>
+    <p>Have a question, feedback, or just want to say hello? Drop me a message below!<br>
+    *These are just placeholders*</p>
+
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <h2>Connect with Us</h2>
+    <p>Follow me on social media to stay updated on my adventures!<br>
+    *These are just placeholders*</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+      <a href="https://www.twitter.com" target="_blank">Twitter</a> |
+      <a href="https://www.facebook.com" target="_blank">Facebook</a>
+    </div>
+  </div>
 </body>
 </html>
