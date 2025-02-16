@@ -286,6 +286,90 @@ footer {
   display: block;
 }
 
+/* Travel Form Section */
+.travel-form-section {
+    text-align: center;
+    padding: 50px 10px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    width: 60%;
+    margin: 50px auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.travel-form-section h2 {
+    font-size: 28px;
+    color: #6d4f0e;
+    margin: auto;
+    text-align: center;
+}
+
+.travel-form-section p {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Travel Form Styling */
+form {
+    background: #f3d8b3;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 30px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+}
+select {
+    font-size: 18px;
+    padding: 8px; 
+}
+/*this is the file upload button*/
+input[type="file"] {
+    font-size: 18px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 15px;
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 20%;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+}
+
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Image Preview for travel form */
+#imagePreview img {
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+
 /* Mobile Compatibility */
 @media screen and (max-width: 768px) {
   .dropdown-menu {
@@ -411,6 +495,42 @@ footer {
           </div>
       </div>
     </div>
+  </section>
+  <section class="travel-form-section">
+    <h2> Share Your Travel Experience</h2>
+    <p>Help fellow travelers by sharing your experience and tips!</p>
+
+    <form id="travelForm">
+      <label for="name">Your Name (Optional):</label>
+      <input type="text" id="name" name="name">
+
+      <label for="email">Email (Optional - for updates):</label>
+      <input type="email" id="email" name="email">
+
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" name="destination" required>
+
+      <label for="story">Your Travel Story or tips:</label>
+      <textarea id="story" name="story" rows="5" required></textarea>
+
+      <label for="rating">How would you rate this place?</label>
+      <select id="rating" name="rating">
+          <option value="5">⭐️⭐️⭐️⭐️⭐️ - Amazing</option>
+          <option value="4">⭐️⭐️⭐️⭐️ - Great</option>
+          <option value="3">⭐️⭐️⭐️ - Good</option>
+          <option value="2">⭐️⭐️ - Okay</option>
+          <option value="1">⭐️ - Wouldn’t recommend</option>
+      </select>
+
+      <label for="image">Upload a Photo (Optional, max 2MB):</label>
+      <input type="file" id="image" name="image" accept="image/*">
+      <div id="imagePreview"></div>
+
+      <button type="submit">Submit Story</button>
+      <p id="message"></p>
+  </form>
+</section>
+
   </section>
   <!-- Footer -->
   <footer>
