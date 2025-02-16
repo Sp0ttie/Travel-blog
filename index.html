@@ -74,20 +74,17 @@ nav ul li a:hover {
   padding-top: 80px;
   position: relative;
 }
-/* Adding a Dark overlay for a little better readability */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.1);
-}
 
 .hero-content {
-  position: relative;
-  max-width: 700px;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  width: 35%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .hero h1 {
@@ -102,6 +99,44 @@ nav ul li a:hover {
   font-weight: 300;
   color: black;
 }
+/*JS Video Container*/
+
+/* Video Box Container (Wraps video & text) */
+.video-box {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 35%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Video Container (Removed absolute positioning) */
+.videoContainer {
+  width: 100%;
+  height: auto;
+}
+
+/* Video Styling */
+.videoContainer video {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay Text Below Video */
+.video-overlay {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 600;
+}
+
 footer {
     margin-top: auto;
     width: 100%;
@@ -226,24 +261,24 @@ footer {
   background: white;
   list-style: none;
   padding: 10px 0;
-  min-width: 150px;
+  min-width: 220px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 
 .dropdown-menu li {
-  padding: 10px 20px;
+  padding: 50px 20px;
 }
 
 .dropdown-menu li a {
   text-decoration: none;
   color: black;
-  font-size: 18px;
+  font-size: 30px;
   display: block;
 }
 
 .dropdown-menu li a:hover {
-  background: #e0e0e0;
+  background: #d6b983;
 }
 
 /* Show Dropdown on Hover */
@@ -293,14 +328,55 @@ footer {
       <h1>Hey, I'm Travis!</h1>
       <p>Welcome to my travel blog where I share insights, tips, and hacks for traveling abroad. My site is currently under maintenance. However, the final product will be cool.</p>
     </div>
+    <!-- JS video for hero -->
+    <div class="video-box">
+      <div id="VideoSection" class="videoContainer"></div>
+      <div class="video-overlay">
+        <p>Mario Kart racing through the streets of Japan!</p>
+      </div>
+    </div>
   </section>
+  </section>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        
+        let videocontainer = document.getElementById("VideoSection");
+  
+        // Ensure the container exists before inserting the video
+        if (!videocontainer) {
+            console.error("Error: The #VideoSection div is missing.");
+            return;
+        }
+  
+        // Creates my video element
+        let videoElement = document.createElement("video");
+        videoElement.setAttribute("controls", "true");
+        videoElement.setAttribute("autoplay", "true");
+        videoElement.setAttribute("muted", "true"); // This is required for autoplay
+        videoElement.setAttribute("loop", "true");
+        videoElement.setAttribute("width", "100%");
+  
+        // Creates my video source element
+        let sourceElement = document.createElement("source");
+        sourceElement.setAttribute("src", "video/VID_mario2.mp4"); // Ensures my file exists
+        sourceElement.setAttribute("type", "video/mp4");
+  
+        // Append source to video
+        videoElement.appendChild(sourceElement);
+  
+        // Append video to the correct container
+        videocontainer.appendChild(videoElement);
+    });
+  </script>
+  
     <!-- Destination Section -->
   <section class="destination-section">
     <h2>Explore destinations in:</h2>
       <div class="destination-container">
         <!-- Paris -->
     <div class="image-box">
-          <a href="paris.html">
+          <a href="france.html">
               <img src="img/IMG_2131.jpg" alt="Paris">
           </a>
           <div class="overlay">
@@ -309,7 +385,7 @@ footer {
       </div>
       <!-- Strasbourg -->
       <div class="image-box">
-          <a href="strasbourg.html">
+          <a href="france.html">
               <img src="img/IMG_0789.jpg" alt="Strasbourg">
           </a>
           <div class="overlay">
@@ -318,7 +394,7 @@ footer {
       </div>
       <!-- Barcelona -->
       <div class="image-box">
-          <a href="barcelona.html">
+          <a href="spain.html">
               <img src="img/IMG_6419.jpg" alt="Barcelona">
           </a>
           <div class="overlay">
