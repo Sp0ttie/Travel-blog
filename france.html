@@ -506,13 +506,13 @@ footer {
         let videoElement = document.createElement("video");
         videoElement.setAttribute("controls", "true");
         videoElement.setAttribute("autoplay", "true");
-        videoElement.setAttribute("muted", "true"); // This is required for autoplay
+        videoElement.setAttribute("muted", "true"); 
         videoElement.setAttribute("loop", "true");
         videoElement.setAttribute("width", "100%");
   
         // Creates my video source element
         let sourceElement = document.createElement("source");
-        sourceElement.setAttribute("src", "video/France/pyramid.mp4"); // Ensures my file exists
+        sourceElement.setAttribute("src", "video/France/pyramid.mp4"); 
         sourceElement.setAttribute("type", "video/mp4");
   
         // Append source to video

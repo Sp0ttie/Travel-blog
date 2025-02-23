@@ -1,38 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #62b3d8;
-      padding: 20px;
-      color: black;
-    }
-    a {
-      text-decoration: none;
-      color: black;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel Blog</title>
 </head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+  .container{
+    width: 100%;
+    
+}
+  nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #f3d8b3;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 5%; 
+  z-index: 100;
+}
+nav ul {
+  list-style: none;
+  justify-content: flex-end;
+  display: flex;
+  padding-inline: 0 1000px;
+  gap: 30px;
+}
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #002df7;
+}
+/* Logo Style */
+.logo { 
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    text-decoration: none;
+}
+/* Hero Section */
+.hero {
+  position: relative;
+  background-image: url("img/IMG_6824.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 80px 5%;
+  position: relative;
+}
+
+.hero-content {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 35%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: 700;
+  color: #6d4f0e;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: 300;
+  color: black;
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: #f3d8b3;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+}
+/* Destination Section Styling */
+.destination-section {
+  text-align: center;
+  padding: 60px 5%;
+  background-color: #a4d1f8;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+/* Section Title */
+.destination-section h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #6d4f0e;
+  text-transform: uppercase;
+}
+
+/* Container for Cards */
+.destination-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Card Styling */
+.image-box {
+  position: relative;
+  width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-box img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.image-box:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay for text */
+.image-box .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  /* Text inside overlay */
+.image-box .overlay p {
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+/* Default (larger screens) */
+.menu-icon {
+  display: none;
+}
+/* Dropdown Menu Styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 220px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.dropdown-menu li {
+  padding: 50px 20px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background: #d6b983;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Places of Interest Section */
+.interest-section {
+    text-align: center;
+    padding: 60px 5%; 
+    background-color: #e4c19b; 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: black;
+    min-height: 500px; 
+}
+
+/* Section Title */
+.interest-section h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #6d4f0e;
+    text-transform: uppercase;
+}
+
+/* Align Image & Text Side by Side */
+.interest-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+/* Image Box */
+.image-interest {
+    flex: 0 0 35%; 
+    text-align: center;
+}
+
+/* Image Styling */
+.image-interest img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    max-height: 500px;
+    object-fit: cover; 
+}
+
+/* Overlay Below Image */
+.overlay-interest {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Text Content */
+.interest-content {
+    flex: 0 0 50%; 
+    text-align: left;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+}
+
+/* Headings & Text Styling */
+.interest-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #6d4f0e;
+    margin-bottom: 10px;
+}
+
+.interest-content p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+/* Mobile compatibility*/
+@media screen and (max-width: 768px) {
+    ul {
+      display: none; 
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background: #f3d8b3;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    ul.show {
+      display: flex;
+    }
+
+    .menu-icon {
+      display: block;
+      font-size: 30px;
+      cursor: pointer;
+      color: black;
+      padding: 10px;
+    }
+
+    .dropdown-menu {
+      position: static;
+      display: none;
+      background: #f3d8b3;
+      width: 100%;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .video-box {
+      width: 90%;
+      position: relative;
+      top: auto;
+      right: auto;
+      max-height: 250px;
+      margin: 20px;
+      transform: none;
+    }
+
+    .videoContainer video {
+      max-height: 250px;
+    }
+
+    .interest-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .image-interest, .interest-content {
+      flex: 1;
+      max-width: 90%;
+    }
+
+    .interest-content {
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .image-interest img {
+      max-height: 300px;
+    }
+
+    .image-box img {
+      height: 250px;
+    }
+
+    .interest-content p, .overlay p, .video-overlay p {
+      font-size: 16px;
+    }
+
+    .interest-section, .destination-section {
+      padding: 40px 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content {
+      width: 80%;
+      left: 10%;
+    }
+
+    .image-box {
+      width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .video-box {
+      right: 0%; 
+      margin-right: 20px; 
+    }
+}
+</style>
+
 <body>
-  <header>
-    <h1>Japan</h1>
-    <p><a href="index.html">Back to Home</a></p>
-  </header>
-  <main>
-    <p>This page is a work in progress.</p>
-  </main>
+  <!-- Navigation Menu -->
+  <div class="container">
+    <nav>
+      <a href="index.html">
+        <img src="img/logo.png" class="logo" alt="Travel Blog Logo">
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Destinations</a>
+          <ul class="dropdown-menu">
+            <li><a href="france.html">France</a></li>
+            <li><a href="spain.html">Spain</a></li>
+            <li><a href="japan.html">Japan</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Japan</h1>
+      <p>Experience the rich traditions, breathtaking landscapes, and cutting-edge technology of Japan. From the vibrant streets of Tokyo to the serene temples of Kyoto, embark on a journey through a land where the past and future blend seamlessly.</p>
+    </div>
+  </section>
+
+  <!-- Places of Interest Section -->
+  <section class="interest-section">
+    <h3>Must-Visit Places in Japan</h3>
+    <div class="interest-container">
+      <!-- Kyoto -->
+      <div class="image-interest">
+          <img src="img/kyoto.jpg" alt="Kyoto, Japan">
+        </a>
+        <div class="overlay-interest">
+          <p>Kyoto</p>
+        </div>
+      </div>
+      <div class="interest-content">
+        <h1>Kyoto</h1>
+        <p>Immerse yourself in the timeless beauty of Kyoto, home to ancient temples, peaceful Zen gardens, and the famous geisha district of Gion.</p>
+      </div>
+    </div>
+
+    <div class="interest-container">
+      <!-- Odaiba -->
+      <div class="image-interest">
+          <img src="img/IMG_6041.JPG" alt="Odaiba, Japan">
+        </a>
+        <div class="overlay-interest">
+          <p>Gundam Statue</p>
+        </div>
+      </div>
+      <div class="interest-content">
+        <h1>Diver City </h1>
+        <p>Embark on an electrifying journey to Odaiba, Tokyo, where the majestic Gundam statue stands as a beacon of futuristic wonder.</p>
+      </div>
+    </div>
+  </section>
+
+      <!-- Destination Section -->
+      <section class="destination-section">
+        <h2>Explore destinations in:</h2>
+          <div class="destination-container">
+            <!-- Paris -->
+        <div class="image-box">
+              <a href="france.html">
+                  <img src="img/IMG_2131.jpg" alt="Paris">
+              </a>
+              <div class="overlay">
+                  <p>Paris, France</p>
+              </div>
+          </div>
+          <!-- Strasbourg -->
+          <div class="image-box">
+              <a href="france.html">
+                  <img src="img/IMG_0789.jpg" alt="Strasbourg">
+              </a>
+              <div class="overlay">
+                  <p>Strasbourg, France</p>
+              </div>
+          </div>
+          <!-- Barcelona -->
+          <div class="image-box">
+              <a href="spain.html">
+                  <img src="img/IMG_6419.jpg" alt="Barcelona">
+              </a>
+              <div class="overlay">
+                  <p>Barcelona, Spain</p>
+              </div>
+          </div>
+          <!-- Japan -->
+          <div class="image-box">
+              <a href="japan.html">
+                  <img src="img/kyoto.jpg" alt="Japan">
+              </a>
+              <div class="overlay">
+                  <p>Kyoto, Japan</p>
+              </div>
+          </div>
+        </div>
+      </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Follow us on Facebook for more travel insights</p>
+  </footer>
+
 </body>
 </html>
+
+
